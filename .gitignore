@@ -44,10 +44,4 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-# Signing — never commit
-*.keystore
-*.keystore.*
-*.jks
-android/key.properties
-.env
-.env.*
+# Signing/Secrets werden global ueber ~/.gitignore_global abgedeckt
