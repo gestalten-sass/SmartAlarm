@@ -27,7 +27,7 @@ export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform
 
 ## Projekt
 
-**Pfad:** `/home/norbert/claude-code/stich/app/`  
+**Pfad:** `/home/norbert/00-workspace/stich/app/`  
 **App-Name:** Alarm  
 **Package:** `de.norbertsass.smart_alarm`  
 **Version:** 1.0.0+1
@@ -110,8 +110,8 @@ dev_dependencies:
 |---|---|
 | Keystore-Datei | `gestalten-sass.keystore` (im Projektroot) |
 | Alias | `smart_alarm` |
-| Passwort | `SmartAlarm2026!` |
-| Konfiguration | `android/key.properties` |
+| Passwort | aus `.env`: `$SMART_ALARM_KEY_PASSWORD` und `$SMART_ALARM_STORE_PASSWORD` |
+| Konfiguration | aus `.env`: `$SMART_ALARM_STORE_FILE` (Fallback: `android/key.properties`) |
 
 **Wichtig:** Keystore sicher aufbewahren (USB-Stick / Cloud-Backup) — ohne ihn sind keine Updates möglich!
 
@@ -120,7 +120,7 @@ dev_dependencies:
 ## APK / Bundle bauen & installieren
 
 ```bash
-cd ~/claude-code/Stich/smart_alarm
+cd ~/00-workspace/stich/app
 
 # Debug-Build
 flutter build apk --debug
