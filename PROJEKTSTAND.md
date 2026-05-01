@@ -139,28 +139,28 @@ flutter build appbundle --release
 
 ## Google Play Veröffentlichung
 
-**Preis:** 2,99 €  
+**Preis:** Kostenlos  
 **Kategorie:** Tools  
 **Datenschutz-URL:** `gestalten-sass.de/datenschutzerklaerung/`
 
 | Schritt | Status |
 |---------|--------|
 | Developer Account angelegt | ✅ |
-| Identitätsbestätigung | ⏳ ausstehend |
-| Telefonnummer bestätigen | ⏳ nach Identitätsbestätigung |
+| Identitätsbestätigung | ✅ |
+| Telefonnummer bestätigen | ✅ |
 | Website bestätigt | ✅ |
 | App Bundle hochgeladen | ✅ |
 | Beschreibungen eingetragen | ✅ |
 | Feature-Grafik hochgeladen | ✅ |
 | App-Symbol hochgeladen | ✅ |
-| Screenshots | ❌ noch ausstehend (mind. 2, selbst machen) |
-| Einreichung zur Überprüfung | ❌ erst nach Identitätsbestätigung |
+| Screenshots | ✅ |
+| Einreichung zur Überprüfung | ✅ |
 
 ---
 
 ## Offene Punkte
 
-- [ ] Warten auf Google-Identitätsbestätigung
-- [ ] Telefonnummer bestätigen
-- [ ] Screenshots hochladen (mind. 2 vom Smartphone)
-- [ ] App zur Überprüfung einreichen
+- [x] Identitätsbestätigung abgeschlossen
+- [x] Telefonnummer bestätigt
+- [x] Screenshots hochgeladen
+- [x] App zur Überprüfung eingereicht
