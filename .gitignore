@@ -46,6 +46,7 @@ app.*.map.json
 
 # Signing — never commit
 *.keystore
+*.keystore.*
 *.jks
 android/key.properties
 .env
