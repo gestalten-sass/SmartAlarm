@@ -45,3 +45,8 @@ app.*.map.json
 /android/app/release
 
 # Signing/Secrets werden global ueber ~/.gitignore_global abgedeckt
+
+# Local AI/tooling workspace metadata
+.claude/
+.agents/
+.codex/
