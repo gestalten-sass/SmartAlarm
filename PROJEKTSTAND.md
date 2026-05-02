@@ -27,7 +27,7 @@ export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform
 
 ## Projekt
 
-**Pfad:** `/home/norbert/00-workspace/stich/app/`  
+**Pfad:** `/home/norbert/00-workspace/stich/smart_alarm/`  
 **App-Name:** Alarm  
 **Package:** `de.norbertsass.smart_alarm`  
 **Version:** 1.0.0+1
@@ -120,7 +120,7 @@ dev_dependencies:
 ## APK / Bundle bauen & installieren
 
 ```bash
-cd ~/00-workspace/stich/app
+cd ~/00-workspace/stich/smart_alarm
 
 # Debug-Build
 flutter build apk --debug
