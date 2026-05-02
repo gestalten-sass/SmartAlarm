@@ -10,41 +10,45 @@ class AppBottomNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    return Container(
-      color: AppColors.surfaceContainerLow,
-      padding: const EdgeInsets.symmetric(vertical: 12),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          _NavItem(
-            icon: Icons.shield_outlined,
-            label: l10n.navCentral,
-            active: currentIndex == 0,
-            onTap: currentIndex == 0
-                ? () {}
-                : () => Navigator.of(context).pop(),
-          ),
-          _NavItem(
-            icon: Icons.settings_outlined,
-            label: l10n.navSettings,
-            active: currentIndex == 1,
-            onTap: currentIndex == 1
-                ? () {}
-                : currentIndex == 0
-                    ? () => Navigator.of(context).pushNamed('/settings')
-                    : () => Navigator.of(context).pushReplacementNamed('/settings'),
-          ),
-          _NavItem(
-            icon: Icons.info_outline,
-            label: l10n.navInfo,
-            active: currentIndex == 2,
-            onTap: currentIndex == 2
-                ? () {}
-                : currentIndex == 0
-                    ? () => Navigator.of(context).pushNamed('/info')
-                    : () => Navigator.of(context).pushReplacementNamed('/info'),
-          ),
-        ],
+    return SafeArea(
+      top: false,
+      child: Container(
+        color: AppColors.surfaceContainerLow,
+        padding: const EdgeInsets.symmetric(vertical: 12),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            _NavItem(
+              icon: Icons.shield_outlined,
+              label: l10n.navCentral,
+              active: currentIndex == 0,
+              onTap: currentIndex == 0
+                  ? () {}
+                  : () => Navigator.of(context).pop(),
+            ),
+            _NavItem(
+              icon: Icons.settings_outlined,
+              label: l10n.navSettings,
+              active: currentIndex == 1,
+              onTap: currentIndex == 1
+                  ? () {}
+                  : currentIndex == 0
+                  ? () => Navigator.of(context).pushNamed('/settings')
+                  : () =>
+                        Navigator.of(context).pushReplacementNamed('/settings'),
+            ),
+            _NavItem(
+              icon: Icons.info_outline,
+              label: l10n.navInfo,
+              active: currentIndex == 2,
+              onTap: currentIndex == 2
+                  ? () {}
+                  : currentIndex == 0
+                  ? () => Navigator.of(context).pushNamed('/info')
+                  : () => Navigator.of(context).pushReplacementNamed('/info'),
+            ),
+          ],
+        ),
       ),
     );
   }

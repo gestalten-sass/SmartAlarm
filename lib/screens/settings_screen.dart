@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../l10n/app_localizations.dart';
 import '../main.dart' show appLocale;
@@ -21,6 +22,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   bool _vibrationEnabled = true;
   bool _wakelockEnabled = true;
   String? _customSoundPath;
+  String _version = '';
 
   @override
   void initState() {
@@ -33,11 +35,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final vib = await _alarmService.getVibrationEnabled();
     final wake = await _alarmService.getWakelockEnabled();
     final customPath = await _alarmService.getCustomSoundPath();
+    final packageInfo = await PackageInfo.fromPlatform();
     setState(() {
       _selectedSound = sound;
       _vibrationEnabled = vib;
       _wakelockEnabled = wake;
       _customSoundPath = customPath;
+      _version = packageInfo.version;
     });
   }
 
@@ -136,7 +140,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           await _alarmService.setVibrationEnabled(v);
                           setState(() => _vibrationEnabled = v);
                         },
-                        activeColor: AppColors.primary,
+                        activeThumbColor: AppColors.primary,
                       ),
                     ),
                     _SettingsTile(
@@ -148,7 +152,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           await _alarmService.setWakelockEnabled(v);
                           setState(() => _wakelockEnabled = v);
                         },
-                        activeColor: AppColors.primary,
+                        activeThumbColor: AppColors.primary,
                       ),
                     ),
 
@@ -160,7 +164,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     _SectionHeader(title: l10n.settingsSectionApp),
                     _SettingsTile(
                       title: l10n.settingsVersion,
-                      subtitle: l10n.settingsVersionValue,
+                      subtitle: _version.isEmpty
+                          ? l10n.settingsVersionValue
+                          : '$_version · Gestalten Sass',
                       trailing: null,
                     ),
                   ],
@@ -210,7 +216,10 @@ class _LanguageSelector extends StatelessWidget {
               value: currentCode,
               isExpanded: true,
               dropdownColor: AppColors.surfaceContainerHigh,
-              icon: Icon(Icons.keyboard_arrow_down, color: AppColors.onSurfaceVariant),
+              icon: Icon(
+                Icons.keyboard_arrow_down,
+                color: AppColors.onSurfaceVariant,
+              ),
               onChanged: (code) {
                 if (code != null) _setLocale(code);
               },
@@ -289,9 +298,7 @@ class _SoundTile extends StatelessWidget {
                     style: GoogleFonts.spaceGrotesk(
                       fontSize: 15,
                       fontWeight: FontWeight.w600,
-                      color: selected
-                          ? AppColors.primary
-                          : AppColors.onSurface,
+                      color: selected ? AppColors.primary : AppColors.onSurface,
                     ),
                   ),
                   const SizedBox(height: 2),
