@@ -94,7 +94,7 @@ class AlarmService {
     if (wakelockEnabled) await WakelockPlus.enable();
 
     if (vibrationEnabled) {
-      final hasVibrator = await Vibration.hasVibrator() ?? false;
+      final hasVibrator = await Vibration.hasVibrator();
       if (hasVibrator) {
         Vibration.vibrate(
           pattern: [0, 500, 200, 500, 200, 500],
