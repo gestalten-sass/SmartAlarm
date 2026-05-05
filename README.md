@@ -1,32 +1,27 @@
-# smart_alarm
+# Smart Alarm
 
-A new Flutter project.
+Smart Alarm is a Flutter app for loud, fast manual alarm triggering on Android.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- One-tap alarm activation
+- Multiple alarm sounds (including custom file)
+- Optional vibration
+- Optional keep-screen-awake behavior
+- Multi-language UI
 
-A few resources to get you started if this is your first Flutter project:
+## Tech
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- Flutter / Dart
+- Android-first release target
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# Repository maintenance: contributor graph refresh commit (2026-05-01).
-
-## Release Version Bump
-
-For each Google Play update, run:
+## Local Development
 
 ```bash
-./scripts/bump_release_version.sh
+flutter pub get
+flutter run
 ```
 
-This updates `pubspec.yaml` from `MAJOR.MINOR.PATCH+BUILD` to
-`MAJOR.MINOR.(PATCH+1)+(BUILD+1)`.
+## Release
 
-Example:
-- `1.0.3+6` -> `1.0.4+7`
+Release process notes are documented in [docs/RELEASE.md](docs/RELEASE.md).
