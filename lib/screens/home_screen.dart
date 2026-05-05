@@ -206,7 +206,7 @@ class _HomeScreenState extends State<HomeScreen>
                             ),
                             boxShadow: [
                               BoxShadow(
-                                color: AppColors.alarmRed.withOpacity(0.4),
+                                color: AppColors.alarmRed.withValues(alpha: 0.4),
                                 blurRadius: 60,
                                 spreadRadius: 10,
                               ),
@@ -235,7 +235,7 @@ class _HomeScreenState extends State<HomeScreen>
                                 style: GoogleFonts.workSans(
                                   fontSize: 11,
                                   color: AppColors.onPrimaryContainer
-                                      .withOpacity(0.7),
+                                      .withValues(alpha: 0.7),
                                   letterSpacing: 0.5,
                                 ),
                               ),
@@ -250,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen>
                       l10n.homeKeepDeviceReady,
                       style: GoogleFonts.workSans(
                         fontSize: 12,
-                        color: AppColors.onSurfaceVariant.withOpacity(0.6),
+                        color: AppColors.onSurfaceVariant.withValues(alpha: 0.6),
                       ),
                     ),
                     const SizedBox(height: 8),
@@ -276,5 +276,3 @@ class _HomeScreenState extends State<HomeScreen>
     );
   }
 }
-
-

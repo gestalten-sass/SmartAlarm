@@ -52,7 +52,7 @@ class _InfoScreenState extends State<InfoScreen> {
               color: const Color(0xFF2A1A00),
               borderRadius: BorderRadius.circular(4),
               border: Border.all(
-                color: const Color(0xFFE65100).withOpacity(0.7),
+                color: const Color(0xFFE65100).withValues(alpha: 0.7),
                 width: 1.5,
               ),
             ),

@@ -273,7 +273,7 @@ class _SoundTile extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: selected
-              ? AppColors.primaryContainer.withOpacity(0.15)
+              ? AppColors.primaryContainer.withValues(alpha: 0.15)
               : AppColors.surfaceContainerLow,
           borderRadius: BorderRadius.circular(4),
           border: Border.all(
@@ -391,7 +391,7 @@ class _SettingsTile extends StatelessWidget {
               ],
             ),
           ),
-          if (trailing != null) trailing!,
+          ...[trailing].whereType<Widget>(),
         ],
       ),
     );

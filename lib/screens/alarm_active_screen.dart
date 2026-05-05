@@ -70,7 +70,7 @@ class _AlarmActiveScreenState extends State<AlarmActiveScreen>
                 color: AppColors.background,
                 border: Border.all(
                   color: AppColors.alarmRed
-                      .withOpacity(_flashAnimation.value * 0.6),
+                      .withValues(alpha: _flashAnimation.value * 0.6),
                   width: 3,
                 ),
               ),
@@ -133,7 +133,7 @@ class _AlarmActiveScreenState extends State<AlarmActiveScreen>
                             ),
                             boxShadow: [
                               BoxShadow(
-                                color: AppColors.alarmRed.withOpacity(0.6),
+                                color: AppColors.alarmRed.withValues(alpha: 0.6),
                                 blurRadius: 80,
                                 spreadRadius: 20,
                               ),

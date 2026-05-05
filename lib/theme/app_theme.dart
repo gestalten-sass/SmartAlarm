@@ -32,7 +32,6 @@ class AppTheme {
       brightness: Brightness.dark,
       scaffoldBackgroundColor: AppColors.background,
       colorScheme: const ColorScheme.dark(
-        background: AppColors.background,
         surface: AppColors.surface,
         primary: AppColors.primary,
         primaryContainer: AppColors.primaryContainer,
@@ -97,7 +96,7 @@ class AppTheme {
       ),
       navigationBarTheme: NavigationBarThemeData(
         backgroundColor: AppColors.surfaceContainerLow,
-        indicatorColor: AppColors.primaryContainer.withOpacity(0.3),
+        indicatorColor: AppColors.primaryContainer.withValues(alpha: 0.3),
         labelTextStyle: WidgetStateProperty.all(
           GoogleFonts.workSans(fontSize: 12, color: AppColors.onSurfaceVariant),
         ),
