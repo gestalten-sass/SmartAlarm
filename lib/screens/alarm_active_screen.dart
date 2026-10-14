@@ -42,6 +42,7 @@ class _AlarmActiveScreenState extends State<AlarmActiveScreen>
 
   @override
   void dispose() {
+    _alarmService.dispose();
     _flashController.dispose();
     _pulseController.dispose();
     super.dispose();

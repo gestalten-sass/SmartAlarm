@@ -107,10 +107,19 @@ class AlarmService {
   Future<void> deactivate() async {
     _isActive = false;
     await _player.stop();
-    if (_previousVolume != null) {
-      await FlutterVolumeController.setVolume(_previousVolume!);
+    final prev = _previousVolume;
+    if (prev != null) {
+      await FlutterVolumeController.setVolume(prev);
       _previousVolume = null;
     }
+    await Vibration.cancel();
+    await WakelockPlus.disable();
+  }
+
+  Future<void> reset() async {
+    _isActive = false;
+    await _player.stop();
+    _previousVolume = null;
     await Vibration.cancel();
     await WakelockPlus.disable();
   }

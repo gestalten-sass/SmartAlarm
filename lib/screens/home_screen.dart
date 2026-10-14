@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen>
   late AnimationController _pulseController;
   late Animation<double> _pulseAnimation;
   final AlarmService _alarmService = AlarmService();
-  late Timer _clockTimer;
+  Timer? _clockTimer;
   DateTime _now = DateTime.now();
 
   @override
@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen>
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
     WakelockPlus.disable();
-    _clockTimer.cancel();
+    _clockTimer?.cancel();
     _pulseController.dispose();
     super.dispose();
   }
