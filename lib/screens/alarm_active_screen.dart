@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import '../l10n/app_localizations.dart';
 import '../theme/app_theme.dart';
 import '../services/alarm_service.dart';
-import 'home_screen.dart';
 
 class AlarmActiveScreen extends StatefulWidget {
   const AlarmActiveScreen({super.key});
@@ -51,9 +50,7 @@ class _AlarmActiveScreenState extends State<AlarmActiveScreen>
   Future<void> _stopAlarm() async {
     await _alarmService.deactivate();
     if (!mounted) return;
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (_) => const HomeScreen()),
-    );
+    Navigator.of(context).pushReplacementNamed('/');
   }
 
   @override
@@ -185,6 +182,7 @@ class _AlarmActiveScreenState extends State<AlarmActiveScreen>
                       // Stop-Button
                       GestureDetector(
                         onTap: _stopAlarm,
+                        behavior: HitTestBehavior.opaque,
                         child: Container(
                           width: 200,
                           height: 64,

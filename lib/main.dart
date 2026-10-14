@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'l10n/app_localizations.dart';
 import 'theme/app_theme.dart';
 import 'screens/home_screen.dart';
+import 'screens/alarm_active_screen.dart';
 import 'screens/settings_screen.dart';
 import 'screens/info_screen.dart';
 
@@ -55,6 +56,7 @@ class SmartAlarmApp extends StatelessWidget {
           initialRoute: '/',
           routes: {
             '/': (_) => const HomeScreen(),
+            '/alarm': (_) => const AlarmActiveScreen(),
             '/settings': (_) => const SettingsScreen(),
             '/info': (_) => const InfoScreen(),
           },

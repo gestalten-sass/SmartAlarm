@@ -6,7 +6,6 @@ import '../l10n/app_localizations.dart';
 import '../theme/app_theme.dart';
 import '../services/alarm_service.dart';
 import '../widgets/bottom_nav.dart';
-import 'alarm_active_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -70,9 +69,7 @@ class _HomeScreenState extends State<HomeScreen>
   Future<void> _triggerAlarm() async {
     await _alarmService.activate();
     if (!mounted) return;
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (_) => const AlarmActiveScreen()),
-    );
+    Navigator.of(context).pushReplacementNamed('/alarm');
   }
 
   @override
@@ -191,6 +188,7 @@ class _HomeScreenState extends State<HomeScreen>
                       },
                       child: GestureDetector(
                         onTap: _triggerAlarm,
+                        behavior: HitTestBehavior.opaque,
                         child: Container(
                           width: 220,
                           height: 220,
